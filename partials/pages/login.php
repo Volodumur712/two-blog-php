@@ -1,13 +1,15 @@
 <?php
-    if(isset($_POST['submit'])) {
+    if(isset($_POST["submit"])) {
         $sql = 'SELECT * FROM users WHERE a_name="' . $_POST['login'] . '" AND password="' . $_POST['password'] . '";';
-        var_dump($sql);
+        // var_dump($sql);
         $result = $conn->query($sql);
+        //var_dump($result);
     
         $user = $result->fetch_assoc();
+        //var_dump($user);
 
-        //setcookie("user", $user['id'], time()=3600*24, "/");
-
+        setcookie("user", $user['id'], time()+3600*24, "/");
+        //var_dump($user['id']);
     }
 ?>
 

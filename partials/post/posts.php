@@ -6,7 +6,16 @@ if($result = $conn->query($sql)):
 		$categorySQL = "SELECT * FROM categorys WHERE id=" . $row['category_id'];
 		$categoryResult = $conn->query($categorySQL);
 		$category = $categoryResult->fetch_assoc();
-	?>
+
+/* 
+1, зробити посилання на лайк (окрема сторінка, на неї з допом аякс)
+2, зробити перевірку чи є запис в бд з даним постом і корист
+якщо є то видаляти лайк
+інакше додавати запис і додавати що запис створено
+
+*/
+
+?>
 
 <div class="col-md-4">
     				<div class="blog-entry ftco-animate">
@@ -25,8 +34,27 @@ if($result = $conn->query($sql)):
 	              <div class="meta-wrap align-items-center">
 	              	<div class="half order-md-last">
 		              	<p class="meta">
-		              		<span><i class="icon-heart"></i>3</span>
-		              		<span><i class="icon-eye"></i>100</span>
+
+							<?php 
+							$likessql = 'SELECT count(*) as total FROM user_post_likes WHERE post_id=' . $row['id'];
+							$resultLike = $conn->query($likessql);
+
+							if(isset($_COOKIE['user'])) { // це якщо користувач уже лайкав
+								$likeUserSql = 'SELECT count(*) as total FROM user_post_likes WHERE post_id=' . $row['id'] AND 'user_id=' . $_COOKIE['user'];
+								$resultUserLike = $conn->query($likessql);
+							}
+							?>
+
+		              		<span class="likeBtn
+							<?php
+							if($resultUserLike->fetch_assoc()['total'] > 0) {
+								echo "Liked";
+							}
+							?>
+							
+							" data-id="<?php echo $row['id']; ?>"><i class="icon-heart"></i><p><?php
+		              		echo $resultLike->fetch_assoc()['total'] ?></p></span>
+							<span><i class="icon-eye"></i>100</span>
 		              		<span><i class="icon-comment"></i>5</span>
 		              	</p>
 	              	</div>
