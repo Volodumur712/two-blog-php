@@ -20,7 +20,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/partials/header.php');
       if(isset($_GET['p'])) {
         
       switch ($_GET['p']) {
-        case 'home':
+        case 'home.php':
         $page = 'home';
         break;
         case 'photography.php':
@@ -60,3 +60,12 @@ require($_SERVER['DOCUMENT_ROOT'] . '/partials/header.php');
 <?php
   require($_SERVER['DOCUMENT_ROOT'] . '/partials/scrypts.php');
 ?>
+
+<!--
+авторизація користувача
+8 в кінці відео має бути ерор
+9 переглянути все ще раз, більшість зробив, перевірити
+10 шифрування
+11 на сервер
+
+ -->
