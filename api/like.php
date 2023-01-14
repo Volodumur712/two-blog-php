@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_POST['post_id']) ) {
+
     if(isset($_COOKIE['user'])) { // якщо існує юзер
         $userSQL = 'SELECT * FROM users WHERE id=' . $_COOKIE['user'];  // тоді обираємо користувача
         $userResault = $conn->query($userSQL);
@@ -8,12 +9,12 @@ if(isset($_POST['post_id']) ) {
         if($userResault) {
             $user = $userResault->fetch_assoc(); // якщо юзер найдений
 
-            $sql = 'SELECT * FROM `user_post_likes` WHERE user_id=" . $user['id'] . " AND post_id=" . $_POST['post_id'];';
-
+            $sql = 'SELECT * FROM user_post_likes WHERE user_id=' . $user['id'] . " AND post_id=" . $_POST['post_id'];
+            var_dump(sql);
             $resault = $conn->query($sql);
 
             if($resault->num_rows > 0) {
-                $sql = 'DELETE * FROM user_post_likes WHERE user_id=" . $user['id'] . " AND post_id=" . $_POST['post_id'];';
+                $sql = 'DELETE * FROM user_post_likes WHERE user_id=' . $user['id'] . " AND post_id=" . $_POST['post_id'];
                 $conn->query($sql);
 
                 echo json_encode(['status' == 'disliked', 'count' == 1]); // зняти лайк
@@ -29,11 +30,7 @@ if(isset($_POST['post_id']) ) {
             echo 'no login';
         }
     } 
-
-    
 } else {
     echo "error";
 }
-
-
 ?>
