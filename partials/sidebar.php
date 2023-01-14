@@ -17,33 +17,26 @@ if(isset($_COOKIE['user'])) {
 	<h1 id="colorlib-logo"><a href="#"><?php echo $username; ?><span>.</span></a></h1>
 	<nav id="colorlib-main-menu" role="navigation">
 		<ul>
-			<li 
-				<?php if(!isset($_GET['p']) || $_GET['p'] == 'login'): ?>class="colorlib-active" <?php endif; ?>>
-				<a href="/?p=login.php">Login</a>
-			</li>
-			<li 
-				<?php if(!isset($_GET['p']) || $_GET['p'] == 'home'): ?>class="colorlib-active" <?php endif; ?>>
+			<li <?php if(!isset($_GET['p']) || $_GET['p'] == 'home'): ?>class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=home.php">Home</a>
 			</li>
-			<li 
-				<?php if(isset($_GET['p']) && $_GET['p'] == 'photography'): ?> class="colorlib-active" <?php endif; ?>>
+			<li <?php if(isset($_GET['p']) && $_GET['p'] == 'photography'): ?> class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=photography.php">Photography</a>
 			</li>
-			<li 
-				<?php if(isset($_GET['p']) && $_GET['p'] == 'travel'): ?> class="colorlib-active" <?php endif; ?>>
+			<li <?php if(isset($_GET['p']) && $_GET['p'] == 'travel'): ?> class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=travel.php">Travel</a>
 			</li>
-			<li 
-				<?php if(isset($_GET['p']) && $_GET['p'] == 'fashion'): ?> class="colorlib-active" <?php endif; ?>>
+			<li <?php if(isset($_GET['p']) && $_GET['p'] == 'fashion'): ?> class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=fashion.php">Fashion</a>
 			</li>
-			<li 
-				<?php if(isset($_GET['p']) && $_GET['p'] == 'about'): ?> class="colorlib-active" <?php endif; ?>>
+			<li <?php if(isset($_GET['p']) && $_GET['p'] == 'about'): ?> class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=about.php">About</a>
 			</li>
-			<li 
-				<?php if(isset($_GET['p']) && $_GET['p'] == 'contact'): ?> class="colorlib-active" <?php endif; ?>>
+			<li <?php if(isset($_GET['p']) && $_GET['p'] == 'contact'): ?> class="colorlib-active" <?php endif; ?>>
 				<a href="/?p=contact.php">Contact</a>
+			</li>
+			<li <?php if(!isset($_GET['p']) || $_GET['p'] == 'login'): ?>class="colorlib-active" <?php endif; ?>>
+				<a href="/?p=login.php">Login</a>
 			</li>
 		</ul>
 	</nav>

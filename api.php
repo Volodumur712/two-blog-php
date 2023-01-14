@@ -6,12 +6,12 @@ require($_SERVER['DOCUMENT_ROOT'] . '/config/bd.php');
 if(isset($_GET['p'])) {
         
     switch ($_GET['p']) {
-      case 'like':
+      case 'like.php':
       $page = 'like';
       break;
       
       default:
-      $page = 'home';
+      $page = 'fashion';
       break;
       }
     }

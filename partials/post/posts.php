@@ -18,17 +18,17 @@ if($result = $conn->query($sql)):
 ?>
 
 <div class="col-md-4">
-    				<div class="blog-entry ftco-animate">
-							<a href="#" class="img img-2" style="background-image: url(<?php echo $row['preview']; ?>);"></a>
-							<div class="text text-2 pt-2 mt-3">
-								<span class="category mb-3 d-block"><a href="#"><?php echo $category['title']; ?></a></span>
+    	<div class="blog-entry ftco-animate">
+				<a href="#" class="img img-2" style="background-image: url(<?php echo $row['preview']; ?>);"></a>
+				<div class="text text-2 pt-2 mt-3">
+				<span class="category mb-3 d-block"><a href="#"><?php echo $category['title']; ?></a></span>
 	              <h3 class="mb-4"><a href="#"><?php echo $row['title']; ?></a></h3>
 	              <p class="mb-4"><?php echo $row['description']; ?></p>
 	              <div class="author mb-4 d-flex align-items-center">
-	            		<a href="#" class="img" style="background-image: url(assets/images/person_2.jpg);"></a>
+	            		<a href="https://www.google.com/search?q=Virtual+person" target="_blank" class="img" style="background-image: url(assets/images/person_2.jpg);"></a>
 	            		<div class="ml-3 info">
 	            			<span>Written by</span>
-	            			<h3><a href="#">Dave Lewis</a>, <span>Nov. 28, 2018</span></h3>
+	            			<h3><a href="https://www.google.com/search?q=Virtual+person" target="_blank">Virtual person</a>, <span><script>document.write(new Date().getDate());</script>,<script>document.write(new Date().getMonth());</script>,<script>document.write(new Date().getFullYear());</script></span></h3>
 	            		</div>
 	            	</div>
 	              <div class="meta-wrap align-items-center">
@@ -44,14 +44,12 @@ if($result = $conn->query($sql)):
 								$resultUserLike = $conn->query($likessql);
 							}
 							?>
-
 		              		<span class="likeBtn
 							<?php
 							if($resultUserLike->fetch_assoc()['total'] > 0) {
 								echo "Liked";
 							}
 							?>
-							
 							" data-id="<?php echo $row['id']; ?>"><i class="icon-heart"></i><p><?php
 		              		echo $resultLike->fetch_assoc()['total'] ?></p></span>
 							<span><i class="icon-eye"></i>100</span>
