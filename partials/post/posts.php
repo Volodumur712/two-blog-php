@@ -39,6 +39,8 @@ if($result = $conn->query($sql)):
 							$likessql = 'SELECT count(*) as total FROM user_post_likes WHERE post_id=' . $row['id'];
 							$resultLike = $conn->query($likessql);
 
+							$resultUserLike = null;
+
 							if(isset($_COOKIE['user'])) { // це якщо користувач уже лайкав
 								$likeUserSql = 'SELECT count(*) as total FROM user_post_likes WHERE post_id=' . $row['id'] AND 'user_id=' . $_COOKIE['user'];
 								$resultUserLike = $conn->query($likessql);
@@ -46,7 +48,7 @@ if($result = $conn->query($sql)):
 							?>
 		              		<span class="likeBtn
 							<?php
-							if($resultUserLike->fetch_assoc()['total'] > 0) {
+							if(isset ($resultUserLike) && $resultUserLike->fetch_assoc()['total'] > 0) {
 								echo "Liked";
 							}
 							?>

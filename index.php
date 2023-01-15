@@ -1,3 +1,20 @@
+
+<?php
+// шифруванння пароля
+//  $password = "we";
+//  $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+//   echo $passwordHash . "<hr/>";
+
+//   //$passwordUser = "wew";
+
+//  echo password_verify($password, $passwordHash);
+//  if (password_verify($password, $passwordHash)) {
+//    echo 'Password is valid!';
+//  } else {
+//   echo 'Invalid password.';
+// }
+// die();
+?>
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . '/config/bd.php');  // шукає файл по всьому сервері
 //var_dump($_SERVER['DOCUMENT_ROOT'] . 'config/bd.php');
@@ -63,8 +80,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/partials/header.php');
 
 <!--
 
-9 переглянути все ще раз, більшість зробив, перевірити
-10 шифрування
+9 лайк не працює
+10 шифрування паролі не збігаються
 11 на сервер
 
  -->
