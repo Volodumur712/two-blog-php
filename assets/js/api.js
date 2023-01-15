@@ -18,7 +18,12 @@ $('.likeBtn').on('click', function(e) {
 
 })
 
+/*$('.likeBtn').on('click', function(e) {
+    $(this).data('id');
+    $.post( "/api.php?p=like", { post_id: $(this).data('id')}, function(data) {
+        console.log( data );
 
-
-
+    }, "json")
+});
+*/
 

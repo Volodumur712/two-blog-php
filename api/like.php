@@ -26,9 +26,9 @@ if(isset($_POST['post_id']) ) {
             }
             };
 
-        } else {
+        } 
+        }else {
             echo 'no login';
-        }
     } 
 } else {
     echo "error";
